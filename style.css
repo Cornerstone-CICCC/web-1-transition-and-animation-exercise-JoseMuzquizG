@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    transition: background-color .2s;
+    animation: aroundMovement 5s linear infinite;
+
+}
+
+.circle:hover {
+    background-color: white;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    width: 400px;
+    height: 50px;
+    background-color: lightgray;
+}
+
+.rectangle {
+    background-color: green;
+    width: 0;
+    height: 30px;
+    animation: load 6s linear infinite;
+    margin: 15px;
+}
+
+
+@keyframes aroundMovement {
+    0%, 100%{
+        transform: translateX(0), translateY(0);
+        border-radius: 50%;
+    }
+    25% {
+        transform: translateX(calc(100vw - 100px)) translateY(0);
+        border-radius: 0;
+    }
+    50% {
+        transform: translateX(calc(100vw - 100px)) translateY(calc(100vh - 100px));
+        border-radius: 50%;
+    }
+    75% {
+        transform: translateX(0) translateY(calc(100vh - 100px));
+        border-radius: 0;
+    }
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
